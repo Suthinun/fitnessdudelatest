@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: fitnessdude
+      MYSQL_USER: fitnessdude
+      MYSQL_PASSWORD: 12345678
+      MYSQL_ROOT_PASSWORD: rootpassword # เพิ่ม password ของ root
+    ports:
+      - "3308:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
